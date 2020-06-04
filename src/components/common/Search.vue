@@ -4,14 +4,14 @@
     <div class="search">
         <button><van-icon name="search" style="margin-right:10px;position: relative;top:2px" />好宝贝 等你搜</button>
         <div class="msg">
-            <van-icon name="chat-o" />
+            <van-icon name="chat-o" style="font-size:18px;margin:5px 0 2px 0" />
             <p>消息</p>
         </div>
     </div>
     <div class="three">
         <div class="threeCon">
            <div class="steps">三步省钱  <span>①进入淘宝</span><span>②复制商品标题</span><span>③打开本app</span></div>  
-            <van-button color="linear-gradient(to right, #ff9933, #ff6633)" size="mini" style=" height: 16px;width: 36px;border-radius: 8px;margin: 3px 0 0 8px;">攻略</van-button>
+            <van-button color="linear-gradient(to right, #ff9933, #ff6633)" size="mini" class="helpBtn" style=" ">攻略</van-button>
         </div>
     </div>
 </div>
@@ -63,10 +63,14 @@ export default {
     color: #fff;
     padding-bottom: 5px;
     .threeCon{
-        background: rgba(0,0,0,0.6);
+        background: rgba(0,0,0,0.3);
         display: flex;
+        justify-content: space-between;
         border-radius: 11px;
         padding: 0 0 0 10px;
+        .helpBtn{
+            height: 16px;width: 36px;border-radius: 8px;margin: 3px 5px 0px 0;
+        }
         .steps{
             span{
                 display: inline-block;
