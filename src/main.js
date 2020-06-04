@@ -7,6 +7,12 @@ import store from './store'
 //引入重置样式文件
 import './stylesheets/reset.css';
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+ 
+// import style
+import 'swiper/css/swiper.css'
+ 
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
 //设置基准值lib-flexinle
 import 'amfe-flexible'
