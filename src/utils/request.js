@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Message } from 'element-ui';
+import { Notify } from 'vant';
 import router from '../router/index.js';
 
 const request = axios.create({
@@ -19,7 +19,8 @@ request.interceptors.response.use(
             default:
                 break;
         }
-        Message.error(response.data.message || '未知错误');
+        Notify({ type: 'danger', message: response.data.message || '未知错误' });
+        //Message.error(response.data.message || '未知错误');
         return Promise.reject(error);
     },
 );

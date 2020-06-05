@@ -8,6 +8,8 @@
     <Banner/>
     <!-- 10个 导航 -->
     <NavList/>
+    <!-- 商品列表部分 -->
+    <GoodsList/>
     <!-- tab切换 -->
     <Tabbar/>
   </div>
@@ -19,10 +21,11 @@ import Search from '@/components/common/Search.vue'
 import Banner from '@/components/Home/Banner.vue'
 import NavList from '@/components/Home/NavList.vue'
 import TopNav from '@/components/Home/TopNav.vue'
+import GoodsList from '@/components/Home/GoodsList.vue'
 export default {
   name: 'Home',
   components: {
-    Tabbar,Search,Banner,NavList,TopNav
+    Tabbar,Search,Banner,NavList,TopNav,GoodsList
   }
 }
 </script>
