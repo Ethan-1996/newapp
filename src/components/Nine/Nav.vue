@@ -1,25 +1,22 @@
 <template>
-  <div class="topNav">
-    <p class="great" @click="choice" :class="isactive?'active':''">精选</p>
-    <swiper ref="mySwiper" :options="swiperOptions">
+  <div class="nine_nav">
+      <swiper ref="mySwiper" :options="swiperOptions">
         <swiper-slide 
           v-for="(item,index) in list" 
           :class="item.active?'active':''" 
           :key="index"
           @click.native="change(item.id)">{{item.text}}</swiper-slide>
     </swiper>
-    <van-icon name="wap-nav" />
   </div>
 </template>
 
 <script>
 export default {
-    name:"TopNav",
     data() {
       return {
         isactive:true,
         list:[
-          {id:1,text:'美食',active:false},
+          {id:1,text:'美食',active:true},
           {id:2,text:'女装',active:false},
           {id:3,text:'美妆',active:false},
           {id:4,text:'居家日用',active:false},
@@ -51,63 +48,28 @@ export default {
         //console.log('Current Swiper instance object', this.swiper)
         this.swiper.slideTo(0, 1000, false)
     },
-    methods:{
-      // 菜单切换函数
-      change(id){
-        //console.log(id)
-        this.isactive = false
-        for(let i = 0;i<this.list.length;i++){
-          this.list[i].active = false
-          if(id == this.list[i].id){
-            this.list[i].active = true
-          }
-        }
-      },
-      //精选选中函数
-      choice(){
-        for(let i = 0;i<this.list.length;i++){
-          this.list[i].active = false
-        }
-        this.isactive = true
-      }
-    }
 }
 </script>
 
 <style lang="scss" scoped>
-.topNav{
-    background: #de58b7;
-    padding: 0 10px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 12PX;
-    color: #fff;
-    height: 24px;
-    line-height: 24px;
-    margin-bottom: 5px;
+.nine_nav{
+    background: #fff;
+    height: 44px;
+    line-height: 44px;
+    margin-top: 10px;
+    border-bottom: #ccc 1px solid;
     .swiper-slide{
         width: auto!important;
         font-size: 12PX;
-        color: #fff;
-        margin:0 10px;
-        border-bottom: #de58b7 2px solid ;
+        margin-left: 10px;
+        color: #000;
+        // border-bottom: #fff 2px solid ;
         text-align: center;
         height: auto;
     }
-    .great{
-      width: 60px;
-      border-bottom: #de58b7 2px solid ;
-      text-align: center;
-    }
     .active{
-       border-bottom: #fff 2px solid ;
-    }
-    .van-icon{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      font-size: 18px;
+       border-bottom: #de58b7 2px solid ;
     }
 }
+    
 </style>
