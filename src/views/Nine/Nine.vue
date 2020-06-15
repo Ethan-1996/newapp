@@ -4,6 +4,8 @@
     <Top/>
     <!-- nav切换部分 -->
     <Nav/>
+    <!-- list -->
+    <List/>
      <!-- tab切换 -->
     <Tabbar/>
   </div>
@@ -12,11 +14,12 @@
 <script>
 import Top from '@/components/Nine/NineTop.vue'
 import Nav from '@/components/Nine/Nav.vue'
+import List from '@/components/Nine/List.vue'
 import Tabbar from '@/components/common/Tabbar.vue'
 export default {
   name: 'Nine',
   components: {
-    Tabbar,Top,Nav
+    Tabbar,Top,Nav,List
   }
 }
 </script>

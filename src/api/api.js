@@ -22,7 +22,7 @@ const makeSign = ($data, $appSecret) =>{
 
     // md5加密
     const $ret = md5.update(`${$str}&key=${$appSecret}`).digest('hex');
-    console.log($ret,"1212121212")
+    //console.log($ret,"1212121212")
     return $ret;
 }
 
@@ -100,6 +100,16 @@ export function activitylist(query) {
   return request({
     params:{...query,sign:makeSign(query,appSecret)},
     url: activitylistUrl,
+    method: 'get'
+  })
+}
+
+
+const ninelistUrl= HEADER + '/api/goods/nine/op-goods-list'; //9.9商品
+export function ninelist(query) {
+  return request({
+    params:{...query,sign:makeSign(query,appSecret)},
+    url: ninelistUrl,
     method: 'get'
   })
 }
